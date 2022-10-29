@@ -21,5 +21,9 @@ func main() {
 			zipCode: 7879989,
 		},
 	}
-	fmt.Printf("%+v", jim)
+	jim.print()
+}
+
+func (p person) print() { //struct with recievers
+	fmt.Printf("%+v", p)
 }
