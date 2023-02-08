@@ -18,4 +18,10 @@ func main() {
 
 	//len and capacity
 	fmt.Println(len(arr), cap(arr)) //6 6
+
+	//Remove element at index i
+	a := []string{"A", "B", "C", "D", "E"}
+	i := 2
+
+	fmt.Println(append(a[:i], a[i+1:]...)) // [A B D E]
 }
