@@ -15,6 +15,6 @@ func main() {
 		log.Fatal(err)
 	}
 
-	result := string(content)
-	fmt.Println(strings.Split(result, "\n"))
+	result1 := string(content)
+	fmt.Println(strings.Split(result1, "\n"))
 }
