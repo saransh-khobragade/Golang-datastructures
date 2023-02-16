@@ -9,6 +9,8 @@ func main() {
 
 	//INTEGER only intialization with type
 	var i int
+	//int64 -9223372036854775808 til **9223372036854775807.
+	//int -2147483648 and 2147483647
 
 	//FLOAT intialization and declartion  with type
 	var j float32 = 20.8
