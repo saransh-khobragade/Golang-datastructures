@@ -25,7 +25,7 @@ func main() {
 	fmt.Println("--------------------")
 
 	j := 0
-	for range arr {
+	for j < len(arr) {
 		fmt.Println(arr[j])
 		j++
 	}
