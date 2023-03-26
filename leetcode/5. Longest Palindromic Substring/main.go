@@ -5,7 +5,7 @@ package main
 import "fmt"
 
 func main() {
-	longestPalindrome("babad")
+	fmt.Println(longestPalindrome("aabba"))
 }
 
 func isPalindrome(str string) bool {
@@ -21,10 +21,19 @@ func isPalindrome(str string) bool {
 	}
 	return flag
 }
-func longestPalindrome(s string) {
+func longestPalindrome(s string) string {
+	maxCount := 0
+	output := ""
 	for i := 0; i < len(s); i++ {
-		for j := i + 1; j < len(s); j++ {
-			fmt.Println(isPalindrome(s[i : j+1]))
+		for j := i; j < len(s); j++ {
+			l := len(s[i : j+1])
+			if maxCount < l && isPalindrome(s[i:j+1]) {
+				if l > maxCount {
+					output = s[i : j+1]
+					maxCount = l
+				}
+			}
 		}
 	}
+	return output
 }
