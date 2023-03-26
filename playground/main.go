@@ -1,6 +1,9 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+	"strconv"
+)
 
 func isPalindrome(str string) bool {
 	l := len(str) - 1
@@ -17,5 +20,6 @@ func isPalindrome(str string) bool {
 	return flag
 }
 func main() {
-	fmt.Println(isPalindrome("a"))
+	fmt.Println(strconv.Itoa(10))
+	fmt.Println(isPalindrome("10"))
 }
