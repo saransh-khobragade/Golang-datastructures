@@ -2,24 +2,29 @@ package main
 
 import (
 	"fmt"
-	"time"
+	"sync"
 )
-
-func f(from string, c chan int) {
-	for i := 0; i < 3; i++ {
-		time.Sleep(1 * time.Second)
-		fmt.Println(from, ":", i)
-		c <- i
-	}
-}
 
 func main() {
 
-	c := make(chan int)
+	myCh := make(chan int)
+	wg := &sync.WaitGroup{}
 
-	go f("goroutine", c)
+	wg.Add(2)
 
-	for l := range c { //reading from channels(child routines) whenever channel will have value it will assign to l
-		fmt.Println(l)
-	}
+	go func(ch chan int, wg *sync.WaitGroup) {
+		for v := range ch {
+			fmt.Println(v)
+		}
+		wg.Done()
+	}(myCh, wg)
+
+	go func(ch chan int, wg *sync.WaitGroup) {
+		ch <- 5
+		ch <- 6
+		close(myCh)
+		wg.Done()
+	}(myCh, wg)
+
+	wg.Wait()
 }
