@@ -4,6 +4,9 @@ import "fmt"
 
 func main() {
 
+	//Native print
+	println("hello")
+
 	arr := []int{10, 20, 30}
 
 	//Raw print
