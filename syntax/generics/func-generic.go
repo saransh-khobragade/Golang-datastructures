@@ -6,12 +6,13 @@ import (
 	"golang.org/x/exp/constraints"
 )
 
-type CustomData interface {
-	constraints.Ordered | []byte | []rune
-}
-type User[T CustomData] struct {
-	name string
-	data T
+func MapValues[T constraints.Ordered](values []T, mapFunc func(T) T) []T {
+	var newValues []T
+	for _, v := range values {
+		newValue := mapFunc(v)
+		newValues = append(newValues, newValue)
+	}
+	return newValues
 }
 
 func main() {
