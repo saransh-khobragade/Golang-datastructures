@@ -24,4 +24,9 @@ func main() {
 		println(i, v)
 	}
 
+	//check key exists in map
+	if val, ok := obj["key"]; ok {
+		fmt.Println(val)
+	}
+
 }
