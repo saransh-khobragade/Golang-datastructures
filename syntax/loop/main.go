@@ -14,14 +14,21 @@ func main() {
 		fmt.Println(arr[i])
 	}
 
-	//Method1 for each
+	//Method2 for each
 	fmt.Println("--------------------")
 
 	for i, v := range arr {
 		fmt.Println("Value at index:", i, " is:", v)
 	}
 
-	//Method3 while loop
+	//Method3 only value
+	fmt.Println("--------------------")
+
+	for v := range arr {
+		fmt.Println("Value", v)
+	}
+
+	//Method4 while loop
 	fmt.Println("--------------------")
 
 	j := 0
