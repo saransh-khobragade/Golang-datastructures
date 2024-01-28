@@ -24,8 +24,8 @@ func main() {
 	//Method3 only value
 	fmt.Println("--------------------")
 
-	for v := range arr {
-		fmt.Println("Value", v)
+	for i := range arr {
+		fmt.Println("Index only", i)
 	}
 
 	//Method4 while loop
