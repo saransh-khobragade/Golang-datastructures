@@ -6,29 +6,33 @@ import (
 )
 
 func maxProduct(nums []int) int {
-	max_sum := math.MinInt
-	curr_sum := 1
-	start := 0
-	end := 0
-	s := 0
+	max := math.MinInt
 
-	for i := range nums {
-		curr_sum *= nums[i]
-		if curr_sum > max_sum {
-			max_sum = curr_sum
-			start = s
-			end = i
+	curr := 1
+	for i := 0; i < len(nums); i++ {
+		curr *= nums[i]
+		if curr > max {
+			max = curr
 		}
-		if curr_sum < 0 {
-			curr_sum = 1
-			s += 1
+		if curr == 0 {
+			curr = 1
 		}
 	}
-	fmt.Println(start, end)
-	return max_sum
+	curr = 1
+	for i := len(nums) - 1; i > 0; i-- {
+		curr *= nums[i]
+		if curr > max {
+			max = curr
+
+		}
+		if curr == 0 {
+			curr = 1
+		}
+	}
+	return max
 }
 
 func main() {
-	arr := []int{-3, -1, -1}
+	arr := []int{-1, -2, -3, 0}
 	fmt.Println(maxProduct(arr))
 }

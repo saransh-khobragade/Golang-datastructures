@@ -21,7 +21,7 @@ func maxSubArray(nums []int) int {
 		}
 		if curr_sum < 0 {
 			curr_sum = 0
-			s += 1
+			s = i + 1
 		}
 	}
 	fmt.Println(start, end)
@@ -29,6 +29,6 @@ func maxSubArray(nums []int) int {
 }
 
 func main() {
-	arr := []int{-2, -3}
+	arr := []int{-2, 1, -3, 4, -1, 2, 1, -5, 4}
 	fmt.Println(maxSubArray(arr))
 }

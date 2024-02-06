@@ -1,12 +1,32 @@
 package main
 
-import "fmt"
+import (
+	"math"
+)
 
 func main() {
 
-	arr := "ABCD"
+	arr := []int{3, -1, 2}
+	curr := 0
+	max := math.MinInt
+
+	start := 0
+	end := 0
+	s := 0
+
 	for i := range arr {
-		fmt.Println(arr[i])
-		fmt.Println(string(arr[i]))
+		curr += arr[i]
+		if curr > max {
+			max = curr
+			start = s
+			end = i
+		}
+		if curr < 0 {
+			curr = 0
+			s = i + 1
+		}
 	}
+	println(max)
+	println(start)
+	println(end)
 }
