@@ -1,6 +1,16 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+	"sort"
+	"strings"
+)
+
+func SortString(w string) string {
+	s := strings.Split(w, "")
+	sort.Strings(s)
+	return strings.Join(s, "")
+}
 
 func main() {
 
@@ -15,4 +25,25 @@ func main() {
 			fmt.Println("B is there")
 		}
 	}
+
+	//Split
+	fmt.Println(strings.Split("hello,my,name,is,saransh", ","))
+
+	//Join
+	t := []string{"hello", "my", "name"}
+	fmt.Println(strings.Join(t, ","))
+
+	//Lowercase
+	s := "ABC"
+	str := strings.ToLower(s)
+	fmt.Println(str)
+
+	//Uppercase
+	str = strings.ToUpper(s)
+	fmt.Println(str)
+
+	//Sort string
+	m := SortString("dcba")
+	fmt.Println(m)
+
 }
