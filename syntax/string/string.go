@@ -3,6 +3,7 @@ package main
 import (
 	"fmt"
 	"sort"
+	"strconv"
 	"strings"
 )
 
@@ -45,5 +46,11 @@ func main() {
 	//Sort string
 	m := SortString("dcba")
 	fmt.Println(m)
+
+	//String to int
+	fmt.Println(strconv.Atoi("5"))
+
+	//Int to string
+	fmt.Println(strconv.Itoa(15))
 
 }
