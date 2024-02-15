@@ -1,11 +1,11 @@
 package main
 
 import (
+	"fmt"
 	"math"
 )
 
 func main() {
-
 	arr := []int{3, -1, 2}
 	curr := 0
 	max := math.MinInt
@@ -26,7 +26,7 @@ func main() {
 			s = i + 1
 		}
 	}
-	println(max)
-	println(start)
-	println(end)
+	fmt.Println(max)
+	fmt.Println(start)
+	fmt.Println(end)
 }
