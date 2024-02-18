@@ -1,10 +1,16 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+
+	"golang.org/x/exp/slices"
+)
 
 func main() {
-	slice := []int{1, 2, 3, 4, 5}
+	slice := []int{5, 3, 1, 2, 4}
 
+	//Sorting
+	slices.Sort(slice)
 	fmt.Println(slice) //[1 2 3 4 5]
 
 	slice = append(slice, 6)
