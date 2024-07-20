@@ -1,22 +1,24 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+)
 
 func twoSum(nums []int, target int) []int {
-	var result = []int{}
 
-	for i := 0; i < len(nums); i++ {
-		for j := i + 1; j < len(nums); j++ {
-			if (nums[i] + nums[j]) == target {
-				result = append(result, i)
-				result = append(result, j)
-			}
+	hmap := map[int]int{}
+	result := []int{}
+	for i := range nums {
+		if v, y := hmap[target-nums[i]]; y {
+			result = append(result, i, v)
+		} else {
+			hmap[nums[i]] = i
 		}
 	}
 	return result
 }
 
 func main() {
-	input := []int{3, 2, 4}
-	fmt.Println(twoSum(input, 6))
+	input := []int{2, 7, 11, 15}
+	fmt.Println(twoSum(input, 9))
 }
